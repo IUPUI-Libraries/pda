@@ -1,0 +1,52 @@
+<h1>Book Purchase Request</h1>
+<p id="notice"><%= notice %></p>
+<table class="table">
+  <tr>
+    <th>Request ID:</th>
+    <td><%= @book.id %></td>
+  </tr>
+  <tr>
+    <th>User Name:</th>
+    <td><%= @book.name %></td>
+  </tr>
+  <tr>
+    <th>Email:</th>
+    <td><%= @book.email %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.title' %></th>
+    <td><%= @book.title %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.iucat' %></th>
+    <td><a href="http://iucat.iu.edu/catalog/<%= @book.iucat %>"><%= @book.iucat %></a></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.utitle' %></th>
+    <td><%= @book.utitle %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.pub' %></th>
+    <td><%= @book.pub %></td>
+  </tr>
+    <tr>
+    <th><%= t 'helpers.label.book.pub_date' %></th>
+    <td><%= @book.pub_date %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.isbn' %></th>
+    <td><%= @book.isbn %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.ed' %></th>
+    <td><%= @book.ed %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.oclc' %></th>
+    <td><%= @book.oclc %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.purchase' %></th>
+    <td><%= @book.purchase %></td>
+  </tr>
+</table>

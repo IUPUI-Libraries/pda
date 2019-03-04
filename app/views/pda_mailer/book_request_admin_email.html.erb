@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Book Purchase Request</h1>
+    <p>
+      The following book has been requested by <%= @book.name %> (<%= @book.email %>).
+      University Library will be in touch when book is available.
+    </p>
+    <ul>
+      <li>
+        <%= t 'helpers.label.book.title' %>: <%= @book.title %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.utitle' %>: <%= @book.utitle %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.purchase' %>: <%= @book.purchase %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.pub' %>: <%= @book.pub %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.pub_date' %>: <%= @book.pub_date %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.isbn' %>: <%= @book.isbn %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.iucat' %>:
+        <a href="http://iucat.iu.edu/catalog/<%= @book.iucat %>">
+          http://iucat.iu.edu/catalog/<%= @book.iucat %>  
+        </a>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.ed' %>: <%= @book.ed %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
+      </li>
+      <li>
+        Request ID : <%= @book.id %>
+        <%= %>
+      </li>
+    </ul>
+    <p>
+      Thank you.
+    </p>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

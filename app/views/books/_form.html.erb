@@ -1,0 +1,74 @@
+<%= form_for :book, url: books_path, html: {class: "form-horizontal", role: "form"} do |f| %>
+
+  <table class="table">
+    <tr>
+      <th><%= t 'helpers.label.book.user' %></th>
+      <td><%= @user[:name] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.email' %></th>
+      <td><input id="email" name="book[email]" type="text" value="<%= @user[:email] %>"/> </td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.title' %></th>
+      <td><%= params[:title] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.iucat' %></th>
+      <td><a href="http://iucat.iu.edu/catalog/<%= params[:iucat] %>"><%= params[:iucat] %></a></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.utitle' %></th>
+      <td><%= params[:utitle] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.pub' %></th>
+      <td><%= params[:pub] %></td>
+    </tr>
+      <tr>
+      <th><%= t 'helpers.label.book.pub_date' %></th>
+      <td><%= params[:pub_date] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.isbn' %></th>
+      <td><%= params[:isbn] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.ed' %></th>
+      <td><%= params[:ed] %></td>
+    </tr>
+    <tr>
+      <th><%= t 'helpers.label.book.oclc' %></th>
+      <td><%= params[:oclc] %></td>
+    </tr>
+  </table>
+
+  <%= f.hidden_field :title, :value => params[:title] %>
+  <%= f.hidden_field :utitle, :value => params[:utitle] %>
+  <%= f.hidden_field :pub, :value => params[:pub] %>
+  <%= f.hidden_field :pub_date, :value => params[:pub_date]%>
+  <%= f.hidden_field :isbn, :value => params[:isbn] %>
+  <%= f.hidden_field :iucat, :value => params[:iucat] %>
+  <%= f.hidden_field :ed, :value => params[:ed] %>
+  <%= f.hidden_field :oclc, :value => params[:oclc] %>
+
+  <%= f.radio_button :purchase, 'eBook', :checked => true %>
+  <%= f.label :purchase, 'Purchase the electronic version (e-book), which can be delivered as fast as within 2 hours.', :value => 'ebook' %>
+  <br/>
+  <%= f.radio_button :purchase, 'Rush Print' %>
+  <%= f.label :purchase, 'Purchase the print version, and I would like it delivered as soon as possible (usually within a week).', :value => 'print_asap' %>
+  <br/>
+  <%= f.radio_button :purchase, 'Standard Print' %>
+  <%= f.label :purchase, 'Purchase the print version, and I can wait for a normal delivery (usually within 2 weeks).', :value => 'print_normal' %>
+
+
+  <div class="form-group" style="padding-top:20px;">
+    <div class="col-sm-10">
+      <% if params[:action] == 'new' %>
+        <%= f.submit "Request Book Purchase", :class => "btn btn-default" %>
+      <% else %>
+        <%= f.submit "Update Request", :class => "btn btn-default" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

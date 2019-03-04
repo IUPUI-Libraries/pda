@@ -1,0 +1,21 @@
+Book Purchase Request
+=====================
+
+The following book has been requested by <%= @book.name %> (<%= @book.email %>).
+University Library will be in touch when book is available.
+
+<%= t 'helpers.label.book.title' %>: <%= @book.title %>
+<%= t 'helpers.label.book.utitle' %>: <%= @book.utitle %>
+<%= t 'helpers.label.book.purchase' %>: <%= @book.purchase %>
+<%= t 'helpers.label.book.pub' %>: <%= @book.pub %>
+<%= t 'helpers.label.book.pub_date' %>: <%= @book.pub_date %>
+<%= t 'helpers.label.book.isbn' %>: <%= @book.isbn %>
+<%= t 'helpers.label.book.iucat' %>: <%= @book.iucat %>
+<%= t 'helpers.label.book.ed' %>: <%= @book.ed %>
+<%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
+
+Request ID : <%= @book.id %>
+
+Thank you.
+
+:name, :email, :title, :utitle, :pub, :pub_date, :isbn, :iucat, :ed, :oclc

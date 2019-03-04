@@ -1,0 +1,41 @@
+We have received your Books on Demand request.
+=====================
+
+The following book has been requested by <%= @book.name %> (<%= @book.email %>).
+University Library will be in touch when book is available.
+
+<%= t 'helpers.label.book.title' %>: <%= @book.title %>
+<%= t 'helpers.label.book.utitle' %>: <%= @book.utitle %>
+<%= t 'helpers.label.book.purchase' %>: <%= @book.purchase %>
+<%= t 'helpers.label.book.pub' %>: <%= @book.pub %>
+<%= t 'helpers.label.book.pub_date' %>: <%= @book.pub_date %>
+<%= t 'helpers.label.book.isbn' %>: <%= @book.isbn %>
+<%= t 'helpers.label.book.iucat' %>: <%= @book.iucat %>
+<%= t 'helpers.label.book.ed' %>: <%= @book.ed %>
+<%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
+
+Request ID : <%= @book.id %>
+
+<% if @book[:purchase] == 'ebook' %>
+  When the book is available, you will receive an email from IUPUI
+  University Library with more details about how to access the e-book.
+  Only e-books requested Monday- Friday, 8:00am – 4:00pm can be made available
+  within two hours. E-books requested on weekends or during holidays will be
+  processed on the next business day.
+
+  In some cases, an e-book edition of the book may not yet be available.
+  If no e-book edition is available, the Library will order a print copy
+  of the book, and it will be available for you to pick up within a week.
+<% elsif @book[:purchase] == 'asap' %>
+  When the book is available, you will receive a pick-up notice from IUPUI
+  University Library. The book you requested should be available within
+  a week.
+<% else %>
+  When the book is available, you will receive a pick-up notice from IUPUI
+  University Library. The book you requested should be available within
+  two weeks.
+<% end %>
+
+If you have any questions, please email acqdept@iupui.edu.
+
+Thank you for using Books on Demand.

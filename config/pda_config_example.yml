@@ -1,0 +1,35 @@
+default: &default
+  db:
+    adapter: sqlite3
+    database: db/development.sqlite3
+  email:
+    from: us@here.com
+    admin_to: 'us@here.com, me@my.com'
+  admins:
+    - username
+    - another_user
+  ldap:
+    host: ads.iu.edu
+    port: 389
+    auth:
+      user: iu_user
+      base: ou=group,ou=accounts,dc=ads,dc=iu,dc=edu
+      pass: change_me
+    treebase: ou=accounts,dc=ads,dc=iu,dc=edu
+    groups:
+      - IU-UITS-MANAGED-IN-ENROLLED
+      - IU-UITS-MANAGED-IN-STAFF
+      - IU-UITS-MANAGED-IN-FACULTY
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  db:
+    database: db/test.sqlite3
+
+production:
+  <<: *default
+  db:
+    database: db/production.sqlite3

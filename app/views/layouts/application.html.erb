@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patron Driven Acquistions</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', 'https://assets.iu.edu/brand/1.x/brand.css' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+<%= render :partial => "shared/ul/ulhead" %>
+  
+</head>
+<body class="html not-front not-logged-in no-sidebars page-header-footer page-header-footer-empty" >
+
+<%= render :partial => "shared/ul/ulheader" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9">
+      <%= bootstrap_flash %>
+      <%= yield %>
+    </div>
+    <div class="col-lg-3">
+      <% if admin? %>
+      <%= render :partial => "shared/sidebar" %>
+      <% end %>
+    </div><!--/span-->
+  </div><!--/row-->
+</div>
+
+<%= render :partial => "shared/ul/ulfooter" %>
+
+</body>
+</html>

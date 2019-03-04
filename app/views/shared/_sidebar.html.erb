@@ -1,0 +1,29 @@
+<div class="well sidebar-nav">
+  <h3>System Links</h3>
+    <ul>
+    <% if admin? %>
+      <li><%= link_to "Logout", :action => 'logout' %></li>
+      <li><%= link_to "Home", books_index_path %></li>
+      <li><%= link_to "Admin", books_admin_path %></li>
+      <li>
+        <%= link_to 'Example Submission', new_book_path(:title => 'TEST SUBMISSION',
+                                             :utitle => 'TEST SUBMISSION',
+                                             :pub => 'New York : Beginner Books',
+                                             :pub_date => '2019',
+                                             :isbn => '123456789',
+                                             :iucat => '6091603',
+                                             :ed => '1st',
+                                             :oclc => 'ocm00000000 ') %>
+      </li>
+      <li>
+        <%= link_to 'Example w/ Missing Fields', new_book_path(:title => 'TEST SUBMISSION',
+                                             :utitle => 'TEST SUBMISSION',
+                                             :pub => 'New York : Beginner Books',
+                                             :pub_date => '1901',
+                                             :isbn => '',
+                                             :iucat => '6091603',
+                                             :oclc => 'ocm00000000') %>
+      </li>
+    <% end %>
+    </ul>
+</div>

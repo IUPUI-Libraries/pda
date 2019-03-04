@@ -1,0 +1,32 @@
+<h2>Book Purchase Confirmation</h2>
+<div>
+<% if @book[:purchase] == 'ebook' || @book[:purchase] == 'eBook' %>
+  <p>
+    You will soon receive an email from IUPUI University Library with more
+    details about how to access the e-book. Only e-books requested Monday -
+    Friday, 8:00am – 4:00pm can be made available within two hours. E-books
+    requested on weekends or during holidays will be processed on the next
+    business day.
+  </p>
+  <p>
+    In some cases, an e-book edition of the book may not yet be available. If
+    no e-book edition is available, the Library will order a print copy of the
+    book, and it will be available for you to pick up within a week.
+  </p>
+<% elsif @book[:purchase] == 'asap' || @book[:purchase] == 'Rush Print' %>
+  <p>
+    You will soon receive a confirmation email from IUPUI University Library.
+    In about a week, you will receive a message when the book is ready for you
+    to pick up. We will also contact you if there are any unforeseen delays.
+  </p>
+<% elsif @book[:purchase] == 'normal' || @book[:purchase] == 'Standard Print' %>
+  <p>
+    You will soon receive a confirmation email from IUPUI University Library.
+    Within the next two weeks, you will receive a message when the book is ready
+    for you to pick up. We will also contact you if there are any unforeseen
+    delays.
+  </p>
+<% else %>
+  <p>Purchase method unknown.</p>
+<% end %>
+</div>

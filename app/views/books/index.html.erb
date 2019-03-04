@@ -1,0 +1,17 @@
+<h2>Book On Demand Request</h2>
+<div>
+  <p>
+    The IUPUI University Library ON DEMAND initiative allows users to select books
+    they want the library to purchase for the user in a timely manner.
+    The books can be purchased in a print form that can take anywhere from
+    2-3 days to receive or up to 2 weeks.  The user also can select to have access
+    to an online electronic version--which is usually the fastest way to get access.
+    The user will be sent an email when the book they want is available.
+  </p>
+</div>
+
+<% if @user_name %>
+  <p>Hello, <%= @user_name %>! You are authenticated. [ <%= link_to("Logout", :action => 'logout') %> ]</p>
+<% else %>
+  <p>You are not yet authenticated. <%= link_to("Login", @login_url) %>
+<% end %>

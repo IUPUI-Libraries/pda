@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>We have received your Books on Demand request.</h1>
+    <p>
+      The following book has been requested by <%= @book.name %> (<%= @book.email %>).
+      University Library will be in touch when book is available.
+    </p>
+    <ul>
+      <li>
+        <%= t 'helpers.label.book.title' %>: <%= @book.title %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.utitle' %>: <%= @book.utitle %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.purchase' %>: <%= @book.purchase %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.pub' %>: <%= @book.pub %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.pub_date' %>: <%= @book.pub_date %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.isbn' %>: <%= @book.isbn %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.iucat' %>:
+        <a href="http://iucat.iu.edu/catalog/<%= @book.iucat %>">
+          http://iucat.iu.edu/catalog/<%= @book.iucat %>
+        </a>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.ed' %>: <%= @book.ed %>
+      </li>
+      <li>
+        <%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
+      </li>
+      <li>
+        Request ID : <%= @book.id %>
+        <%= %>
+      </li>
+    </ul>
+    <% if @book[:purchase] == 'ebook' %>
+    <p>
+      When the book is available, you will receive an email from IUPUI
+      University Library with more details about how to access the e-book.
+      Only e-books requested Monday - Friday, 8:00am – 4:00pm can be made 
+      available within two hours. E-books requested on weekends or during
+      holidays will be processed on the next business day.
+    </p>
+    <p>
+      In some cases, an e-book edition of the book may not yet be available.
+      If no e-book edition is available, the Library will order a print copy
+      of the book, and it will be available for you to pick up within a week.
+    </p>
+    <% elsif @book[:purchase] == 'asap' %>
+    <p>
+      When the book is available, you will receive a pick-up notice from IUPUI
+      University Library. The book you requested should be available within
+      a week.
+    </p>
+    <% else %>
+    <p>
+      When the book is available, you will receive a pick-up notice from IUPUI
+      University Library. The book you requested should be available within
+      two weeks.
+    </p>
+    <% end %>
+    <p>
+      If you have any questions, please email acqdept@iupui.edu.
+    </p>
+    <p>
+      Thank you for using Books on Demand.
+    </p>
+    <%= image_tag('ulmailimage.png') %>
+  </body>
+</html>

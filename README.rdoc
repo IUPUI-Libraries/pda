@@ -1,0 +1,40 @@
+== README
+
+Form Fields need to contain:
+______________________________________
+Title / Subtitle (245 a, b, c) | title
+Uniform Title (240 a, l) | utitle
+Publisher + (260 b, 264 b) | pub
+Publish Date (260 c, 264 c) | pub_date
+ISBN/ISSN + (020 a, 022 a) | isbn
+URL of record (to have ckey) | url
+Edition (250 a)  | ed
+OCLC Number 035 | oclc
+
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
