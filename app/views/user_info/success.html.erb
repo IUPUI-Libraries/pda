@@ -1,0 +1,11 @@
+<h2>User Info</h2>
+
+<p>Info for <%= @username %></p>
+
+<ul>
+  <li>email: <%= @info[:email] %></li>
+  <li>department: <%= @info[:department] %></li>
+  <li>campus: <%= @info[:campus] %></li>
+</ul>
+
+<%= render 'form' %>

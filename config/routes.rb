@@ -12,6 +12,10 @@ Rails.application.routes.draw do
 
   resources :books
 
+  resources :user_info, only: [:new, :success]
+
+  post '/user_info/new', to: 'user_info#success'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
