@@ -1,7 +1,5 @@
 module BooksHelper
 
-  
-
   def get_ldap_user(cas_name)
     user = {}
     user[:ul_user] = false
