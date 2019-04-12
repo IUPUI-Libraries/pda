@@ -1,5 +1,7 @@
 class UserInfoController < ApplicationController
 
+  before_filter :authorize, :except => [:index, :new, :create, :denied, :success]
+
   def new
 
   end

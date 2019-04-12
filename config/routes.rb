@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/books/logout', to: 'books#logout'
+  get '/books/logout', to: 'application#logout'
   get '/books/admin', to: 'books#admin'
   get '/books/index', to: 'books#index'
   get '/books/new', to: 'books#new'

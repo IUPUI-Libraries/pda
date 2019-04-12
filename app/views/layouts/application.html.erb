@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 
 <%= render :partial => "shared/ul/ulhead" %>
-  
+
 </head>
 <body class="html not-front not-logged-in no-sidebars page-header-footer page-header-footer-empty" >
 
@@ -21,9 +21,9 @@
       <%= yield %>
     </div>
     <div class="col-lg-3">
-      <% if admin? %>
+      <%# if admin? %>
       <%= render :partial => "shared/sidebar" %>
-      <% end %>
+      <%# end %>
     </div><!--/span-->
   </div><!--/row-->
 </div>
