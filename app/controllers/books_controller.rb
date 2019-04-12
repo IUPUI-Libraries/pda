@@ -84,11 +84,7 @@ class BooksController < ApplicationController
 
   end
 
-  def logout
-    # optionally do some local cleanup here
 
-    CASClient::Frameworks::Rails::Filter.logout(self)
-  end
 
   private
 

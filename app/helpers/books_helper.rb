@@ -1,10 +1,6 @@
 module BooksHelper
 
-  def get_user
-    @user_name = session[:cas_user]
-    @user = get_ldap_user(session[:cas_user])
-    @admin = admin?
-  end
+  
 
   def get_ldap_user(cas_name)
     user = {}
@@ -39,11 +35,7 @@ module BooksHelper
     user
   end
 
-  def admin?
-    @admins = PDA.config[:admins]
-    return true if @admins.include?(@user_name)
-    false
-  end
+
 
   def authorize
     unless admin?

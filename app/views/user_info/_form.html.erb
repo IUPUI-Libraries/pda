@@ -1,0 +1,11 @@
+<%= form_for :user_info do |f| %>
+  <table>
+    <tr>
+      <th>Username</th>
+    </tr>
+    <tr>
+      <td><%= f.text_field :username %></td>
+      <td><%= submit_tag "Submit" %></td>
+    </tr>
+  </table>
+<% end %>

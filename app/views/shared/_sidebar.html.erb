@@ -2,9 +2,10 @@
   <h3>System Links</h3>
     <ul>
     <% if admin? %>
-      <li><%= link_to "Logout", :action => 'logout' %></li>
+      <li><%= link_to "Logout", :action => 'logout', controller: 'application' %></li>
       <li><%= link_to "Home", books_index_path %></li>
       <li><%= link_to "Admin", books_admin_path %></li>
+      <li><%= link_to "User Info", user_info_new_path%></li>
       <li>
         <%= link_to 'Example Submission', new_book_path(:title => 'TEST SUBMISSION',
                                              :utitle => 'TEST SUBMISSION',

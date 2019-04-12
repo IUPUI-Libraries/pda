@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/books/logout', to: 'books#logout'
+  get '/books/logout', to: 'application#logout'
   get '/books/admin', to: 'books#admin'
   get '/books/index', to: 'books#index'
   get '/books/new', to: 'books#new'
@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   root 'books#index'
 
   resources :books
+
+  resources :user_info, only: [:new, :success]
+
+  post '/user_info/new', to: 'user_info#success'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
