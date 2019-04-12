@@ -1,15 +1,15 @@
-<h1>Admin Page</h1>
+<h1>Books on Demand Requests</h1>
 
 <script>
-  
+
 $(function(){
-  
+
   $.tablesorter.themes.bootstrap = {
     iconSortNone : 'bootstrap-icon-unsorted', // class name added to icon when column is not sorted
     iconSortAsc  : 'glyphicon glyphicon-chevron-up', // class name added to icon when column has ascending sort
-    iconSortDesc : 'glyphicon glyphicon-chevron-down',  
+    iconSortDesc : 'glyphicon glyphicon-chevron-down',
   };
-  
+
   $("#adminTable").tablesorter({
     theme: 'bootstrap',
     headerTemplate : '{content} {icon}',
