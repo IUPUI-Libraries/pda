@@ -13,6 +13,7 @@ University Library will be in touch when book is available.
 <%= t 'helpers.label.book.iucat' %>: <%= @book.iucat %>
 <%= t 'helpers.label.book.ed' %>: <%= @book.ed %>
 <%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
+<%= t 'helpers.label.book.course' %>: <%= @book.course ? 'Yes' : 'No' %>
 <% unless @book.campus.blank? %>
 <%= t 'helpers.label.book.campus' %>: <%= @book.campus %>
 <% end %>
