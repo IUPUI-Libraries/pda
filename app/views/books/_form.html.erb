@@ -3,7 +3,11 @@
   <table class="table">
     <tr>
       <th><%= t 'helpers.label.book.user' %></th>
-      <td><%= @user[:name] %></td>
+      <% if admin? %>
+        <td><input id="name" name="book[name]" type="text" value="<%= @user[:name] %>"/> </td>
+      <% else %>
+        <td><%= @user[:name] %></td>
+      <% end %>
     </tr>
     <tr>
       <th><%= t 'helpers.label.book.email' %></th>

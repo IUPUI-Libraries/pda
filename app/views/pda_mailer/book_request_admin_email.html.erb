@@ -31,7 +31,7 @@
       <li>
         <%= t 'helpers.label.book.iucat' %>:
         <a href="http://iucat.iu.edu/catalog/<%= @book.iucat %>">
-          http://iucat.iu.edu/catalog/<%= @book.iucat %>  
+          http://iucat.iu.edu/catalog/<%= @book.iucat %>
         </a>
       </li>
       <li>
@@ -44,18 +44,14 @@
         Request ID : <%= @book.id %>
         <%= %>
       </li>
+      <% unless @book.campus.blank? %>
+      <li>
+        User Campus : <%= @book.campus %>
+      </li>
+      <% end %>
     </ul>
     <p>
       Thank you.
     </p>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

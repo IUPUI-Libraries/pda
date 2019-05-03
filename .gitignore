@@ -27,3 +27,6 @@ pda_config.*
 
 # Ignore public assets
 public/assets
+
+# Ignore bye bug history
+.byebug_history

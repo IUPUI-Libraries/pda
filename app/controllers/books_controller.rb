@@ -31,7 +31,11 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
-    @book[:name] = @user[:name]
+    if @book[:name] == @user[:name]
+      @book[:campus] = @user[:campus]
+    else
+      @book[:campus] = LdapService.fetch_info(@book[:name])[:campus]
+    end
 
     if @user[:ul_user]
       if @book.save
@@ -89,7 +93,7 @@ class BooksController < ApplicationController
   private
 
     def book_params
-      params.require(:book).permit(:name, :email, :title, :utitle, :pub, :pub_date, :isbn, :iucat, :ed, :oclc, :purchase)
+      params.require(:book).permit(:campus, :name, :email, :title, :utitle, :pub, :pub_date, :isbn, :iucat, :ed, :oclc, :purchase)
     end
 
 end
