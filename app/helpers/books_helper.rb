@@ -1,6 +1,9 @@
 module BooksHelper
 
   def get_ldap_user(cas_name)
+
+    return LdapService.fetch_info(cas_name)
+
     user = {}
     user[:ul_user] = false
     ldap = Net::LDAP.new
@@ -10,7 +13,7 @@ module BooksHelper
     if ldap.bind
       filter = Net::LDAP::Filter.eq('cn', cas_name)
       treebase = PDA.config[:ldap][:treebase]
-      result_attrs = ['sAMAccountName', 'displayName', 'mail', 'memberof']
+      result_attrs = ['sAMAccountName', 'displayName', 'mail', 'memberof', 'department', 'l']
       ldap.search(base: treebase, filter: filter, attributes: result_attrs) do |item|
         user[:name] = item.sAMAccountName.first
         user[:display_name] = item.displayName.first

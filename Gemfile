@@ -55,6 +55,7 @@ gem 'net-ldap'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+gem 'byebug',group: [:development, :test]
 
 # Other gems
 gem 'font-awesome-rails'

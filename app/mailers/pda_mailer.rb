@@ -8,7 +8,14 @@ class PdaMailer < ActionMailer::Base
 
   def book_request_admin_email(book)
     @book = book
-    mail(to: PDA.config[:email][:admin_to], subject: '[PDA] Books On Demand Purchase Request', importance: 'High')
+    if @book.campus != 'Indianapolis' && @book.campus != ''
+      mail(to: PDA.config[:email][:admin_to],
+           subject: "[PDA][#{@book.campus}] Books On Demand Purchase Request",
+           importance: 'High')
+    else
+      mail(to: PDA.config[:email][:admin_to],
+           subject: '[PDA] Books On Demand Purchase Request',
+           importance: 'High')
+    end
   end
-
 end
