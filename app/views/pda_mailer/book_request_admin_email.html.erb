@@ -9,6 +9,9 @@
       The following book has been requested by <%= @book.name %> (<%= @book.email %>).
       University Library will be in touch when book is available.
     </p>
+    <% if @book.course %>
+    <h3>This book is for a course being taught.</h3>
+    <% end %>
     <ul>
       <li>
         <%= t 'helpers.label.book.title' %>: <%= @book.title %>
@@ -41,12 +44,14 @@
         <%= t 'helpers.label.book.oclc' %>: <%= @book.oclc %>
       </li>
       <li>
+        <%= t 'helpers.label.book.course' %>: <%= @book.course ? 'Yes' : 'No' %>
+      <li>
         Request ID : <%= @book.id %>
         <%= %>
       </li>
       <% unless @book.campus.blank? %>
       <li>
-        User Campus : <%= @book.campus %>
+        <%= t 'helpers.label.book.campus' %> : <%= @book.campus %>
       </li>
       <% end %>
     </ul>
