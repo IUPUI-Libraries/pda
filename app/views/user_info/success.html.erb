@@ -7,6 +7,21 @@
   <li>iupui: <%= @info[:ul_user] ? "true" : "false" %>
   <li>department: <%= @info[:department] %></li>
   <li>campus: <%= @info[:campus] %></li>
+  <li>
+    <%= link_to 'Example Submission for User', new_book_path(:title => 'TEST SUBMISSION',
+                                         :utitle => 'TEST SUBMISSION',
+                                         :pub => 'New York : Beginner Books',
+                                         :pub_date => '2019',
+                                         :isbn => '123456789',
+                                         :iucat => '6091603',
+                                         :ed => '1st',
+                                         :oclc => 'ocm00000000 ',
+                                         :pseudo_user => @username) %>
+  </li>
 </ul>
 
 <%= render 'form' %>
+
+<p>
+
+</p>
