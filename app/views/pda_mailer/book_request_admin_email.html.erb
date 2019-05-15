@@ -54,6 +54,12 @@
         <%= t 'helpers.label.book.campus' %> : <%= @book.campus %>
       </li>
       <% end %>
+      <% unless @book.department.blank? %>
+      <li>
+        <%= t 'helpers.label.book.department' %> : <%= @book.department %>
+      </li>
+      <% end %>
+
     </ul>
     <p>
       Thank you.

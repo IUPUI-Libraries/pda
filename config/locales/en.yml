@@ -36,3 +36,5 @@ en:
         purchase: Delivery Method
         course: Course Material
         campus: User Campus
+        department: User Department
+        id: Request ID
