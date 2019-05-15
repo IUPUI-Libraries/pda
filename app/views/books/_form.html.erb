@@ -56,15 +56,24 @@
   <%= f.hidden_field :ed, :value => params[:ed] %>
   <%= f.hidden_field :oclc, :value => params[:oclc] %>
 
+  <% if @user[:campus] == 'Fort Wayne' %>
+  <p class="alert alert-warning">
+    Fort Wayne students, staff, and faculty
+    are limited to requesting eBooks only.
+  </p>
+  <% end %>
+
   <%= f.radio_button :purchase, 'eBook', :checked => true %>
   <%= f.label :purchase, 'Purchase the electronic version (e-book), which can be delivered as fast as within 2 hours.', :value => 'ebook' %>
+
+  <% if @user[:campus] != 'Fort Wayne' %>
   <br/>
   <%= f.radio_button :purchase, 'Rush Print' %>
   <%= f.label :purchase, 'Purchase the print version, and I would like it delivered as soon as possible (usually within a week).', :value => 'print_asap' %>
   <br/>
   <%= f.radio_button :purchase, 'Standard Print' %>
   <%= f.label :purchase, 'Purchase the print version, and I can wait for a normal delivery (usually within 2 weeks).', :value => 'print_normal' %>
-
+  <% end %>
 
   <div class="form-group" style="padding-top:20px;">
     <div class="col-sm-10">
