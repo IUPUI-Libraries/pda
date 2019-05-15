@@ -33,8 +33,11 @@ class BooksController < ApplicationController
 
     if @book[:name] == @user[:name]
       @book[:campus] = @user[:campus]
+      @book[:department] = @user[:department]
     else
-      @book[:campus] = LdapService.fetch_info(@book[:name])[:campus]
+      user = LdapService.fetch_info(@book[:name])
+      @book[:campus] = user[:campus]
+      @book[:department] = user[:department]
     end
 
     if @user[:ul_user]

@@ -2,16 +2,24 @@
 <p id="notice"><%= notice %></p>
 <table class="table">
   <tr>
-    <th>Request ID:</th>
+    <th><%= t 'helpers.label.book.id' %></th>
     <td><%= @book.id %></td>
   </tr>
   <tr>
-    <th>User Name:</th>
+    <th><%= t 'helpers.label.book.user' %></th>
     <td><%= @book.name %></td>
   </tr>
   <tr>
-    <th>Email:</th>
+    <th><%= t 'helpers.label.book.email' %></th>
     <td><%= @book.email %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.campus' %></th>
+    <td><%= @book.campus %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.department' %></th>
+    <td><%= @book.department %></td>
   </tr>
   <tr>
     <th><%= t 'helpers.label.book.title' %></th>
