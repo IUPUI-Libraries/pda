@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190515200928) do
+ActiveRecord::Schema.define(version: 20190515204355) do
 
   create_table "books", force: true do |t|
     t.string   "author"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20190515200928) do
     t.string   "campus"
     t.boolean  "course",     default: false
     t.string   "department"
+    t.string   "status"
   end
 
 end
