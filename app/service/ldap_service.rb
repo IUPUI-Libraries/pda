@@ -11,11 +11,12 @@ module LdapService
     ldap.auth auth_user, PDA.config[:ldap][:auth][:pass]
     if ldap.bind
       filter = Net::LDAP::Filter.eq('cn', username)
-      attrs = %w[mail sn memberof department l cn]
+      attrs = %w[mail sn memberof department l cn title]
       treebase = PDA.config[:ldap][:treebase]
       ldap.search(base: treebase, filter: filter, attributes: attrs) do |entry|
         info[:email] = entry.mail[0]
         info[:name] = entry.cn[0]
+        info[:status] = entry.respond_to?(:title) ? entry.title[0] : ''
         info[:department] = entry.respond_to?(:department) ? entry.department[0] : ''
         info[:campus] = entry.respond_to?(:l) ? entry.l[0] : ''
         members = entry.memberof

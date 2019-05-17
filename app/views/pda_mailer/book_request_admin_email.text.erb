@@ -20,6 +20,9 @@ University Library will be in touch when book is available.
 <% unless @book.department.blank? %>
 <%= t 'helpers.label.book.department' %>: <%= @book.department %>
 <% end %>
+<% unless @book.status.blank? %>
+<%= t 'helpers.label.book.status' %>: <%= @book.status %>
+<% end %>
 
 Request ID : <%= @book.id %>
 
