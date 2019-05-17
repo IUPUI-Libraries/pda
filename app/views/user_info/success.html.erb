@@ -1,12 +1,13 @@
 <h2>User Info</h2>
 
-<p>Info for <%= @username %></p>
+<p>Info for <strong><%= @username %></strong></p>
 
 <ul>
-  <li>email: <%= @info[:email] %></li>
-  <li>iupui: <%= @info[:ul_user] ? "true" : "false" %>
-  <li>department: <%= @info[:department] %></li>
-  <li>campus: <%= @info[:campus] %></li>
+  <li>Email: <%= @info[:email] %></li>
+  <li>IUPUI Affiliated: <%= @info[:ul_user] ? "true" : "false" %>
+  <li><%= t 'helpers.label.book.department' %>: <%= @info[:department] %></li>
+  <li><%= t 'helpers.label.book.campus' %>: <%= @info[:campus] %></li>
+  <li><%= t 'helpers.label.book.status' %>: <%= @info[:status] %></li>
   <li>
     <%= link_to 'Example Submission for User', new_book_path(:title => 'TEST SUBMISSION',
                                          :utitle => 'TEST SUBMISSION',
