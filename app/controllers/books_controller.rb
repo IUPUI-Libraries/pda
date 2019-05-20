@@ -10,7 +10,6 @@ class BooksController < ApplicationController
   def index
     @user_name = session[:cas_user]
     @login_url = CASClient::Frameworks::Rails::Filter.login_url(self)
-
   end
 
   def show
@@ -77,7 +76,12 @@ class BooksController < ApplicationController
 
   def admin
     @books = Book.all.order('created_at desc')
-    @zone = ActiveSupport::TimeZone.new("Eastern Time (US & Canada)")
+    @zone = ActiveSupport::TimeZone.new('Eastern Time (US & Canada)')
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @books.to_csv }
+    end
   end
 
   def success
