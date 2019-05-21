@@ -81,6 +81,7 @@ GEM
     openurl (1.0.0)
       marc
       scrub_rb (~> 1.0)
+    pagy (3.2.0)
     rack (1.5.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -160,6 +161,7 @@ DEPENDENCIES
   mysql2
   net-ldap
   openurl (~> 1.0.0)
+  pagy
   rails (= 4.1.6)
   rubycas-client!
   sass-rails (~> 4.0.3)

@@ -59,3 +59,4 @@ gem 'byebug',group: [:development, :test]
 
 # Other gems
 gem 'font-awesome-rails'
+gem 'pagy'
