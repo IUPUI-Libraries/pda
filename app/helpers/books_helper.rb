@@ -1,4 +1,5 @@
 module BooksHelper
+  include Pagy::Frontend
 
   def get_ldap_user(cas_name)
     user = LdapService.fetch_info(cas_name)

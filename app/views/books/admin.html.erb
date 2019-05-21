@@ -48,6 +48,8 @@ $(function(){
   </tbody>
 </table>
 
+<%== pagy_nav(@pagy) %>
+
 <div>
   <%= link_to 'Export Requests', books_admin_path(format: :csv) %>
 </div>

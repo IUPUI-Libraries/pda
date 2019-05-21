@@ -7,6 +7,8 @@ class BooksController < ApplicationController
   before_filter CASClient::Frameworks::Rails::Filter, :get_user, :except => :index
   before_filter :authorize, :except => [:index, :new, :create, :denied, :success]
 
+  include Pagy::Backend
+
   def index
     @user_name = session[:cas_user]
     @login_url = CASClient::Frameworks::Rails::Filter.login_url(self)
@@ -75,12 +77,13 @@ class BooksController < ApplicationController
   end
 
   def admin
-    @books = Book.all.order('created_at desc')
+    @all_books = Book.all.order('created_at desc')
+    @pagy, @books = pagy(@all_books)
     @zone = ActiveSupport::TimeZone.new('Eastern Time (US & Canada)')
 
     respond_to do |format|
       format.html
-      format.csv { send_data @books.to_csv }
+      format.csv { send_data @all_books.to_csv }
     end
   end
 
