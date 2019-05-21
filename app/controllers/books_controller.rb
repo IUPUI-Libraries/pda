@@ -54,8 +54,6 @@ class BooksController < ApplicationController
     else
       redirect_to(books_index_path, notice: 'Book request could not be completed. You must be affiliates with IUPUI for this service.')
     end
-
-
   end
 
   def update
@@ -66,14 +64,12 @@ class BooksController < ApplicationController
     else
       render 'edit'
     end
-
   end
 
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
     redirect_to books_admin_path
-
   end
 
   def admin
@@ -84,7 +80,7 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data @all_books.to_csv }
+      format.csv { send_data @all_books.to_csv, filename: "books_on_demand-#{Date.today}.csv" }
     end
   end
 
@@ -93,22 +89,17 @@ class BooksController < ApplicationController
   end
 
   def my_account
-
     # Additional user attributes are available if your
     # CAS server is configured to provide them.
     # See http://code.google.com/p/rubycas-server/wiki/HowToSendExtraUserAttributes
     @extra_attributes = session[:cas_extra_attributes]
-
   end
-
-
 
   private
 
-    def book_params
-      params.require(:book).permit(:campus, :name, :email, :title, :utitle,
-                                   :pub, :pub_date, :isbn, :iucat, :ed, :oclc,
-                                   :purchase, :course)
-    end
-
+  def book_params
+    params.require(:book).permit(:campus, :name, :email, :title, :utitle,
+                                 :pub, :pub_date, :isbn, :iucat, :ed, :oclc,
+                                 :purchase, :course)
+  end
 end
