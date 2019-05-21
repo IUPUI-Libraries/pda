@@ -6,6 +6,10 @@
     <td><%= @book.id %></td>
   </tr>
   <tr>
+    <th><%= t 'helpers.label.book.created_at' %></th>
+    <td><%= @book.created_at %></td>
+  </tr>
+  <tr>
     <th><%= t 'helpers.label.book.user' %></th>
     <td><%= @book.name %></td>
   </tr>
@@ -62,3 +66,6 @@
     <td><%= @book.purchase %></td>
   </tr>
 </table>
+
+<%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
+<%= link_to 'Delete', book_path(@book), method: :delete, data: {confirm: 'Are your sure?' }, class: 'btn btn-default' %>

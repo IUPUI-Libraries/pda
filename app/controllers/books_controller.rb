@@ -77,7 +77,8 @@ class BooksController < ApplicationController
   end
 
   def admin
-    @all_books = Book.all.order('created_at desc')
+    @q = Book.order('created_at desc').ransack(params[:q])
+    @all_books = @q.result
     @pagy, @books = pagy(@all_books)
     @zone = ActiveSupport::TimeZone.new('Eastern Time (US & Canada)')
 

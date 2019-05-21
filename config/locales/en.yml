@@ -39,3 +39,4 @@ en:
         department: User Department
         id: Request ID
         status: User Status
+        created_at: Submitted

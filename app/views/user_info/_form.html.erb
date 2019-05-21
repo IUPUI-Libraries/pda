@@ -1,11 +1,11 @@
 <%= form_for :user_info do |f| %>
-  <table>
+  <table id="user_info_search">
     <tr>
       <th>Username</th>
     </tr>
     <tr>
       <td><%= f.text_field :username %></td>
-      <td><%= submit_tag "Submit" %></td>
+      <td><%= submit_tag "Submit", class: 'btn btn-primary' %></td>
     </tr>
   </table>
 <% end %>
