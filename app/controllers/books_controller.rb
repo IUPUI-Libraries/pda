@@ -84,6 +84,12 @@ class BooksController < ApplicationController
     end
   end
 
+  def resend
+    @book = Book.find(params[:id])
+    PdaMailer.book_request_admin_email(@book).deliver
+    redirect_to(book_path(@book), notice: 'Email resent to admins.')
+  end
+
   def success
     @book = Book.find(params[:id])
   end

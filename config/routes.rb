@@ -10,7 +10,10 @@ Rails.application.routes.draw do
   #get '/welcome/index'
   root 'books#index'
 
-  resources :books
+  resources :books do
+    get 'resend', on: :member
+  end
+
 
   resources :user_info, only: [:new, :success]
 
