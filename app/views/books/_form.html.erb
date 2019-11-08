@@ -58,7 +58,7 @@
 
   <% if @user[:campus].in?(['Fort Wayne', 'Columbus']) %>
   <p class="alert alert-warning">
-    Fort Wayne students, staff, and faculty
+    <%=  @user[:campus] %> students, staff, and faculty
     are limited to requesting eBooks only.
   </p>
   <% end %>
