@@ -47,6 +47,8 @@
     </tr>
   </table>
 
+
+  <%= f.hidden_field :name, :value => @user[:name] unless admin? %>
   <%= f.hidden_field :title, :value => params[:title] %>
   <%= f.hidden_field :utitle, :value => params[:utitle] %>
   <%= f.hidden_field :pub, :value => params[:pub] %>
