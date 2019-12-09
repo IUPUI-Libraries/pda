@@ -10,7 +10,7 @@ default: &default
     - another_user
   ldap:
     host: ads.iu.edu
-    port: 389
+    port: 636
     auth:
       user: iu_user
       base: ou=group,ou=accounts,dc=ads,dc=iu,dc=edu

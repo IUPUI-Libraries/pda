@@ -5,8 +5,9 @@ module LdapService
   def self.fetch_info(username)
     info = {}
     info[:ul_user] = false
-    ldap = Net::LDAP.new
+    ldap = Net::LDAP.new encryption: {method: :simple_tls}
     ldap.host = PDA.config[:ldap][:host]
+    ldap.port = PDA.config[:ldap][:port]
     auth_user = ["cn=#{PDA.config[:ldap][:auth][:user]}", PDA.config[:ldap][:auth][:base]].join(',')
     ldap.auth auth_user, PDA.config[:ldap][:auth][:pass]
     if ldap.bind
