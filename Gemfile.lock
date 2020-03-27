@@ -75,7 +75,7 @@ GEM
       unf
     mime-types (2.6.1)
     minitest (5.7.0)
-    multi_json (1.11.0)
+    multi_json (1.14.1)
     mysql2 (0.3.19)
     net-ldap (0.16.1)
     openurl (1.0.0)
@@ -120,7 +120,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     spring (1.3.6)
-    sprockets (2.12.3)
+    sprockets (2.12.5)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
