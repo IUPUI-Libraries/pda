@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     get 'resend', on: :member
   end
 
+  resources :notices
+
 
   resources :user_info, only: [:new, :success]
 

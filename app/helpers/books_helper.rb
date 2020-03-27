@@ -9,7 +9,15 @@ module BooksHelper
     pseudo_user
   end
 
-
+  def message_check
+    @notices = Notice.displayed
+    @message = ''
+    @notices.each do |notice|
+      @message += "<p>#{notice.message}</p>"
+    end
+    return if @message.empty?
+    flash.now[:notice] = @message.html_safe
+  end
 
   def authorize
     unless admin?
