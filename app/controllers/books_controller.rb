@@ -23,6 +23,7 @@ class BooksController < ApplicationController
       flash[:error] = 'Book request could not be completed. You must be an IUPUI student, faculty, or staff member for this service.'
       redirect_to(books_denied_path)
     end
+    message_check
   end
 
   def edit
