@@ -64,6 +64,11 @@
         <%= t 'helpers.label.book.status' %> : <%= @book.status %>
       </li>
       <% end %>
+      <% unless @book.further_info.blank? %>
+      <li>
+        <%= t 'helpers.label.book.further_info' %> : <%= @book.further_info %>
+      </li>
+      <% end %>
 
     </ul>
     <p>

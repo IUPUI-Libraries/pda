@@ -68,6 +68,11 @@
   <tr>
     <th><%= t 'helpers.label.book.course' %></th>
     <td><%= @book.course ? 'Yes' : 'No' %></td>
+  </tr>
+  <tr>
+    <th><%= t 'helpers.label.book.further_info' %></th>
+    <td><%= @book.further_info %></td>
+  </tr>
 </table>
 
 <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-primary' %>
