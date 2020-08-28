@@ -30,3 +30,6 @@ public/assets
 
 # Ignore bye bug history
 .byebug_history
+
+# Ignore logs
+log/*
