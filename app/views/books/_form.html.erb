@@ -71,7 +71,7 @@
   <% unless @user[:campus].in?(['Fort Wayne', 'Columbus']) %>
   <br/>
   <%= f.radio_button :purchase, 'Rush Print' %>
-  <%= f.label :purchase, 'Purchase the print version, and I would like it delivered as soon as possible (usually within two weeks).', :value => 'print_asap' %>
+  <%= f.label :purchase, 'Purchase the print version, and I would like it delivered as soon as possible (usually within 2 weeks).', :value => 'print_asap' %>
   <br/>
   <%= f.radio_button :purchase, 'Standard Print' %>
   <%= f.label :purchase, 'Purchase the print version, and I can wait for a normal delivery (usually within 3 weeks)', :value => 'print_normal' %>
